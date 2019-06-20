@@ -1,21 +1,25 @@
 ### Socket Server / Client
 
 Python
-- https://www.geeksforgeeks.org/socket-programming-python/
+- https://python-socketio.readthedocs.io/en/latest/client.html
 ```python
-# Import socket module 
-import socket                
-  
-# Create a socket object 
-s = socket.socket()                     
-  
-# connect to the server on local computer 
-s.connect(("localhost", 8000)) 
-  
-# receive data from the server 
-print s.recv(1024) 
-# close the connection 
-s.close()
+import socketio
+
+sio = socketio.Client()
+sio.connect('http://localhost:8000')
+
+# Doesn't display if server is already running
+@sio.event
+def connect():
+    print("I'm connected!")
+
+@sio.event
+def disconnect():
+    print("I'm disconnected!")
+
+@sio.on('command')
+def on_message(data):
+    print('Msg rcvd: ' + data)
 ```
 --------------------------------------------------
 

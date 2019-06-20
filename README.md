@@ -2,6 +2,9 @@
 
 Python
 - https://python-socketio.readthedocs.io/en/latest/client.html
+```bash
+pip install "python-socketio[client]"
+```
 ```python
 import socketio
 
@@ -25,7 +28,10 @@ def on_message(data):
 
 Node.js
 - https://gist.github.com/luciopaiva/e6f60bd6e156714f0c5505c2be8e06d8
-
+```bash
+npm install socket.io
+npm install socket.io-client
+```
 Server
 ```node.js
 const io = require("socket.io");
@@ -50,8 +56,4 @@ const ioClient = io.connect("http://localhost:8000");
 ioClient.on("command", function(msg){
 	console.info(msg);
 });
-```
-```bash
-npm install socket.io
-npm install socket.io-client
 ```

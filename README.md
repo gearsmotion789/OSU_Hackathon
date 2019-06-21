@@ -1,5 +1,7 @@
 ### Tello example (video & keyboard control) - implement socket client here
-- https://github.com/damiafuentes/DJITelloPy
+- https://github.com/topics/tello
+- https://github.com/cbwang2016/tello-control
+- https://github.com/kanekotic/tellojs
 
 ### Socket Server / Client
 

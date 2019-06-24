@@ -1,64 +1,21 @@
-### Tello example (video & keyboard control) - implement socket client here
-- https://github.com/topics/tello
-- https://github.com/cbwang2016/tello-control
-- https://github.com/kanekotic/tellojs
+Slimify
+Slimify is an app that will help you burn calories. Simply type in how many calories you want to burn, and slimify will give you a series of exercies that will help you achieve that goal. 
 
-### Socket Server / Client
+Getting Started
+Download the project onto computer
 
-Python
-- https://python-socketio.readthedocs.io/en/latest/client.html
-```bash
-pip install "python-socketio[client]"
-```
-```python
-import socketio
 
-sio = socketio.Client()
-sio.connect('http://localhost:8000')
+Prerequisites
+Api level 15 is required on the android phone. 
 
-# Doesn't display if server is already running
-@sio.event
-def connect():
-    print("I'm connected!")
+Built With
+Android Studio
 
-@sio.event
-def disconnect():
-    print("I'm disconnected!")
+Versioning
+Alpha 1.0.0
 
-@sio.on('command')
-def on_message(data):
-    print('Msg rcvd: ' + data)
-```
---------------------------------------------------
+Authors
+Alex Feng
 
-Node.js
-- https://gist.github.com/luciopaiva/e6f60bd6e156714f0c5505c2be8e06d8
-```bash
-npm install socket.io
-npm install socket.io-client
-```
-Server
-```node.js
-const io = require("socket.io");
-const server = io.listen(8000);
-
-console.log("Server is running on http://localhost:8000");
-
-// event fired every time a new client connects
-server.on("connection", function(socket){
-	console.log("New client connected!");
-	
-	setInterval(() => {
-	    socket.emit("command", "hi");
-	}, 1000);
-});
-```
-Client
-```node.js
-const io = require("socket.io-client");
-const ioClient = io.connect("http://localhost:8000");
-
-ioClient.on("command", function(msg){
-	console.info(msg);
-});
-```
+Acknowledgments
+Go burn some calories

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserPage">
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="60dp"
+        android:text="Start"
+
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp" />
+
+    <TextView
+        android:id="@+id/timeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time"
+
+        android:layout_marginTop="20dp"
+         />
+
+    <SeekBar
+        android:id="@+id/time"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/timeTitle"
+        android:layout_marginTop="19dp"
+        android:max="60"
+        android:progress="30" />
+
+    <TextView
+        android:id="@+id/calsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Desired Calories"
+
+        android:layout_below="@+id/time"
+        android:layout_marginTop="20dp"
+
+        />
+
+    <SeekBar
+        android:id="@+id/cals"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/calsTitle"
+        android:layout_marginTop="20dp"
+        android:max="100"
+        android:progress="30" />
+
+    <!-- <TextView
+        android:id="@+id/diffTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Difficulty"
+
+        android:layout_below="@+id/cals"
+        android:layout_marginTop="20dp"
+        />
+
+    <EditText
+        android:id="@+id/diff"
+        android:layout_width="127dp"
+        android:layout_height="46dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="hard"
+
+        android:layout_below="@+id/diffTitle"
+        android:layout_marginTop="20dp"
+        /> -->
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddUser"
+    android:layout_marginLeft="10dp">
+
+    <TextView
+        android:id="@+id/nameTitle"
+        android:textSize="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_height="60dp"
+        android:layout_width="80dp"
+        android:layout_below="@+id/nameTitle"
+        android:layout_marginTop="20dp"
+        android:inputType="text"
+        android:text="John"
+        android:textSize="30dp"/>
+
+    <TextView
+        android:id="@+id/weightTitle"
+        android:textSize="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:layout_marginTop="20dp"
+        android:text="Weight" />
+
+    <EditText
+        android:id="@+id/weight"
+        android:layout_height="60dp"
+        android:layout_width="80dp"
+        android:layout_below="@+id/weightTitle"
+        android:layout_marginTop="20dp"
+        android:inputType="text"
+        android:text="180"
+        android:textSize="30dp"/>
+
+    <TextView
+        android:id="@+id/unit"
+        android:textSize="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/weightTitle"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@+id/weight"
+        android:layout_marginRight="50dp"
+        android:text="lbs" />
+
+    <Button
+        android:id="@+id/finish"
+
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+
+        android:textSize="20dp"
+        android:text="Finish" />
+
+</RelativeLayout>

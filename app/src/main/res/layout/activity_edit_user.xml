@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddUser"
+    android:layout_marginLeft="10dp">
+
+    <TextView
+        android:id="@+id/editNameTitle"
+        android:textSize="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_height="60dp"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/editNameTitle"
+        android:layout_marginTop="20dp"
+        android:inputType="text"
+        android:text="John"
+        android:textSize="30dp"/>
+
+    <TextView
+        android:id="@+id/editWeightTitle"
+        android:textSize="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editName"
+        android:layout_marginTop="20dp"
+        android:text="Weight" />
+
+    <EditText
+        android:id="@+id/editWeight"
+        android:layout_height="60dp"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/editWeightTitle"
+        android:layout_marginTop="20dp"
+        android:inputType="text"
+        android:text="180"
+        android:textSize="30dp"/>
+
+    <TextView
+        android:id="@+id/unit"
+        android:textSize="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editWeightTitle"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@+id/editWeight"
+        android:layout_marginRight="50dp"
+        android:text="lbs" />
+
+    <Button
+        android:id="@+id/save"
+
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+
+        android:textSize="20dp"
+        android:text="Save" />
+
+</RelativeLayout>

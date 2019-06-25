@@ -29,7 +29,7 @@ public class AddUser extends AppCompatActivity {
                 String newName = name.getText().toString();
                 String newWeight = weight.getText().toString();
 
-                if (name.length() != 0) {
+                if (newName.length() != 0 || newWeight.length() != 0) {
                     AddData(newName, newWeight);
                     finish();
                 } else {

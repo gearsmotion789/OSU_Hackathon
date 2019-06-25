@@ -44,7 +44,7 @@ public class EditUser extends AppCompatActivity {
                 String newName = name.getText().toString();
                 String newWeight = weight.getText().toString();
 
-                if(!newName.equals("")){
+                if(newName.length() != 0 || newWeight.length() != 0){
                     mDatabaseHelper.updateName(newName, newWeight, itemId, oldName, oldWeight);
                     mDatabaseHelper.updateWeight(newName, newWeight, itemId, newName, oldWeight);
                     toastMessage("updated in database");
@@ -56,7 +56,7 @@ public class EditUser extends AppCompatActivity {
                     startActivity(editScreenIntent);
 
                 }else{
-                    toastMessage("You must enter a name");
+                    toastMessage("You must put something in the text field!");
                 }
             }
         });

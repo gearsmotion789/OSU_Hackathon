@@ -20,7 +20,7 @@
         android:layout_below="@+id/nameTitle"
         android:layout_marginTop="20dp"
         android:inputType="text"
-        android:text="John"
+        android:hint="John"
         android:textSize="30dp"/>
 
     <TextView
@@ -39,7 +39,7 @@
         android:layout_below="@+id/weightTitle"
         android:layout_marginTop="20dp"
         android:inputType="text"
-        android:text="180"
+        android:hint="180"
         android:textSize="30dp"/>
 
     <TextView

@@ -12,8 +12,8 @@ Api level 15 is required on the android phone.
 #### Built With
 Android Studio
 
-#### Versioning
-Alpha 1.0.0
+#### Resources
+- https://www.w3schools.com/colors/colors_picker.asp
 
 #### Authors
 Alex Feng

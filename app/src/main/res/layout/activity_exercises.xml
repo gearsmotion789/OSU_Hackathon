@@ -36,6 +36,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView1"
         android:layout_marginTop="20dp" />
+    <TextView
+        android:text="0"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/calories"
+        android:layout_marginTop="20dp" />
     <EditText
         android:inputType=""
         android:layout_width="100dp"
@@ -50,7 +57,7 @@
         android:id="@+id/imageView1"
         android:layout_marginLeft="250dp" />
     <Button
-        android:text="START TIMER"
+        android:text="PAUSE"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:id="@+id/StartButton"

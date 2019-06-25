@@ -10,6 +10,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.app.LoaderManager.LoaderCallbacks;
 import android.support.v4.content.Loader;
+import android.support.v4.widget.NestedScrollView;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -42,12 +44,14 @@ public class ListUsersFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_item_list, container, false);
 
         // Set the adapter
-        if (view instanceof RecyclerView) {
+        //if (view instanceof RecyclerView) {
             Context context = view.getContext();
-            recyclerView = (RecyclerView) view;
-            recyclerView.setLayoutManager(new LinearLayoutManager(context));
+            recyclerView = view.findViewById(R.id.list);
+            recyclerView.setFocusable(false);   // Makes nested scroll view go to top instead of starting at grid view
+            //recyclerView.setNestedScrollingEnabled(false); // Not needed b/c declared in XML file
+            recyclerView.setLayoutManager(new GridLayoutManager(context,2));
             recyclerView.setAdapter(new RecyclerViewAdapter(new ArrayList<User>(), mListener));
-        }
+        //}
 
         LoaderManager loaderManager = getLoaderManager();
         loaderManager.initLoader(1, null, getDevicesLoaderListener);

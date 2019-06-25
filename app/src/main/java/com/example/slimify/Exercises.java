@@ -17,8 +17,17 @@ public class Exercises extends AppCompatActivity {
 
     private String weight;
     private String time;
+    private String calsBurned;
     private String cals;
-    boolean countDownDone = false;
+
+    private boolean countDownDone = false;
+
+    private long timeRemaining;
+    private boolean isPaused = false;
+
+    private int totalTime;
+    private int totalCalsBurned;
+    private int totalCals;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,19 +36,41 @@ public class Exercises extends AppCompatActivity {
 
         Intent receivedIntent = getIntent();
         time = receivedIntent.getStringExtra("time");
+        calsBurned = receivedIntent.getStringExtra("calsBurned");
         cals = receivedIntent.getStringExtra("cals");
         weight = receivedIntent.getStringExtra("weight");
+
+        totalTime = Integer.valueOf(time);
+        totalCalsBurned = Integer.valueOf(calsBurned);
+        totalCals = Integer.valueOf(cals);
+        int totalWeight = Integer.valueOf(weight);
 
         final TextView mTextField = findViewById(R.id.TimerTextView);
         final Button nextSkipBtn = findViewById(R.id.button2);
         final TextView exerciseName = findViewById(R.id.textView3);
+        final Button startPauseBtn = findViewById(R.id.StartButton);
+        final Button exitBtn = findViewById(R.id.button1);
+        final TextView mCals = findViewById(R.id.calories);
 
+        mCals.setText(calsBurned);
 
+        exitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mainIntent = new Intent(getApplication(), MainActivity.class);
+                startActivity(mainIntent);
+            }
+        });
 
-        new CountDownTimer(5000, 1000) {
-
+        new CountDownTimer(5000/*totalTime*1000*60*/, 1000) {
             public void onTick(long millisUntilFinished) {
-                mTextField.setText("seconds remaining: " + millisUntilFinished / 1000);
+                if(isPaused == true){
+                    cancel();
+                }
+                else {
+                    timeRemaining = millisUntilFinished;
+                    mTextField.setText("seconds: " + timeRemaining / 1000);
+                }
             }
 
             public void onFinish() {
@@ -49,12 +80,53 @@ public class Exercises extends AppCompatActivity {
             }
         }.start();
 
+        startPauseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(isPaused)
+                    startPauseBtn.setText("Pause");
+                else
+                    startPauseBtn.setText("Resume");
+
+                new CountDownTimer(timeRemaining, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        if(isPaused){
+                            cancel();
+                        }
+                        else {
+                            timeRemaining = millisUntilFinished;
+                            mTextField.setText("seconds: " + timeRemaining / 1000);
+                        }
+                    }
+
+                    public void onFinish() {
+                        mTextField.setText("done!");
+                        nextSkipBtn.setText("Next");
+                        countDownDone = true;
+                    }
+                }.start();
+
+                isPaused = !isPaused;
+            }
+        });
+
         nextSkipBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(countDownDone) {
+                int newCalsBurned = totalCalsBurned;
+                if(countDownDone)
+                    newCalsBurned += 10*(totalCals/totalTime);
+
+                if(newCalsBurned >= totalCals) {
+                    Intent finishIntent = new Intent(getApplication(), Finished.class);
+                    finishIntent.putExtra("time", time);
+                    finishIntent.putExtra("calsBurned", Integer.toString(newCalsBurned));
+                    startActivity(finishIntent);
+                }
+                else {
                     Intent exerciseIntent = new Intent(getApplication(), Exercises.class);
                     exerciseIntent.putExtra("time", time);
+                    exerciseIntent.putExtra("calsBurned", Integer.toString(newCalsBurned));
                     exerciseIntent.putExtra("cals", cals);
                     exerciseIntent.putExtra("weight", weight);
                     startActivity(exerciseIntent);
@@ -62,10 +134,16 @@ public class Exercises extends AppCompatActivity {
             }
         });
 
-        int met = findMet(Integer.valueOf(weight), Integer.valueOf(cals));
-        //toastMessage(Integer.toString(met));
+        int met = findMet(totalWeight, totalCals);
         String exercise = getExercise(met);
         exerciseName.setText(exercise);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent startMain = new Intent(getApplication(), MainActivity.class);
+        startActivity(startMain);
+
     }
 
     String level1[] = {

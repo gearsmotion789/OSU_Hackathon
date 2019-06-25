@@ -24,16 +24,16 @@
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
         </android.support.design.widget.AppBarLayout>
 
-        <ImageView
+        <!-- <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            app:srcCompat="@drawable/running" />
+            app:srcCompat="@drawable/running" /> -->
 
         <LinearLayout
             android:id="@+id/flcontent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
         </LinearLayout>
 

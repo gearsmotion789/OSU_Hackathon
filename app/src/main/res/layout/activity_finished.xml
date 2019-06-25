@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Finished">
+
+    <TextView
+        android:id="@+id/congratsTitle"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+
+        android:textSize="60dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Congrats You did it!" />
+
+    <TextView
+        android:id="@+id/calsBurned"
+        android:layout_below="@+id/congratsTitle"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+
+        android:textSize="20dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="100 cals burned" />
+
+    <TextView
+        android:id="@+id/timeSpent"
+        android:layout_below="@+id/calsBurned"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+
+        android:textSize="20dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="20 min workout" />
+
+    <Button
+        android:id="@+id/cont"
+
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
+
+        android:layout_centerHorizontal="true"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:textSize="30dp"
+        android:text="Continue" />
+
+</RelativeLayout>

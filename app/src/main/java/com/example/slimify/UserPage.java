@@ -44,7 +44,7 @@ public class UserPage extends AppCompatActivity {
         SeekBar time = findViewById(R.id.time);
         time.incrementProgressBy(10);
         SeekBar cals = findViewById(R.id.cals);
-        cals.incrementProgressBy(5);
+        cals.incrementProgressBy(10);
 
         time.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -67,8 +67,8 @@ public class UserPage extends AppCompatActivity {
         cals.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                progress = progress / 5;
-                progress = progress * 5;
+                progress = progress / 10;
+                progress = progress * 10;
 
                 calVal = progress;
             }
@@ -87,6 +87,7 @@ public class UserPage extends AppCompatActivity {
             public void onClick(View v) {
                 Intent exerciseIntent = new Intent(getApplication(), Exercises.class);
                 exerciseIntent.putExtra("time", Integer.toString(timeVal));
+                exerciseIntent.putExtra("calsBurned", "0");
                 exerciseIntent.putExtra("cals", Integer.toString(calVal));
                 exerciseIntent.putExtra("weight", weight);
                 startActivity(exerciseIntent);

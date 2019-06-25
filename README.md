@@ -7,16 +7,11 @@ Slimify is an app that will help you burn calories. Simply type in how many calo
 3. Build & Run on your phone
 
 #### Prerequisites
-Api level 15 is required on the android phone. 
+Api level 15 is required on the android phone.
 
-#### Built With
-Android Studio
+#### Challenge
+- https://osuhackathon-summer2019.devpost.com/submissions
+- https://devpost.com/software/slimify
 
-#### Resources
+#### HTML color picker
 - https://www.w3schools.com/colors/colors_picker.asp
-
-#### Authors
-Alex Feng
-
-#### Acknowledgments
-Go burn some calories
